@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - track_start
+  - track_plain_long
+  - track_plain_short
+  - track_plain_curve
+  - track
+  - ground
   layers:
   - Default
   - TransparentFX
