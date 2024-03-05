@@ -1,0 +1,34 @@
+{
+    "name": "CheatCodes",
+    "maps": [
+        {
+            "name": "Main",
+            "id": "af7eb9d9-1fdb-49d1-b037-b6012c41c753",
+            "actions": [
+                {
+                    "name": "Haungs Mode",
+                    "type": "Button",
+                    "id": "32820cde-934a-4f78-b410-112a15675983",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "46d7d776-4dbf-4c4a-ad65-92a6884e7037",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Haungs Mode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
