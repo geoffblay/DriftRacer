@@ -32,7 +32,7 @@ public class Car : MonoBehaviour
             
         }
 
-        if (other.gameObject.name == "finish" && _checkpoint == _totalCheckpoints - 1)
+        if (other.transfrom.parent.name == "finish" && _checkpoint == _totalCheckpoints)
         {
             Debug.Log("You win!");
         }
