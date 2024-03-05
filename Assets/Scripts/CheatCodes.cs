@@ -35,6 +35,15 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""56a8d055-bc0d-49ac-98c7-8b40a6f6b919"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +57,17 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
                     ""action"": ""Haungs Mode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0f88f0f1-2994-4d69-9475-09fd8098d9b4"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +77,7 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
         m_Main_HaungsMode = m_Main.FindAction("Haungs Mode", throwIfNotFound: true);
+        m_Main_PauseMenu = m_Main.FindAction("Pause Menu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -119,11 +140,13 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Main;
     private List<IMainActions> m_MainActionsCallbackInterfaces = new List<IMainActions>();
     private readonly InputAction m_Main_HaungsMode;
+    private readonly InputAction m_Main_PauseMenu;
     public struct MainActions
     {
         private @CheatCodes m_Wrapper;
         public MainActions(@CheatCodes wrapper) { m_Wrapper = wrapper; }
         public InputAction @HaungsMode => m_Wrapper.m_Main_HaungsMode;
+        public InputAction @PauseMenu => m_Wrapper.m_Main_PauseMenu;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -136,6 +159,9 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
             @HaungsMode.started += instance.OnHaungsMode;
             @HaungsMode.performed += instance.OnHaungsMode;
             @HaungsMode.canceled += instance.OnHaungsMode;
+            @PauseMenu.started += instance.OnPauseMenu;
+            @PauseMenu.performed += instance.OnPauseMenu;
+            @PauseMenu.canceled += instance.OnPauseMenu;
         }
 
         private void UnregisterCallbacks(IMainActions instance)
@@ -143,6 +169,9 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
             @HaungsMode.started -= instance.OnHaungsMode;
             @HaungsMode.performed -= instance.OnHaungsMode;
             @HaungsMode.canceled -= instance.OnHaungsMode;
+            @PauseMenu.started -= instance.OnPauseMenu;
+            @PauseMenu.performed -= instance.OnPauseMenu;
+            @PauseMenu.canceled -= instance.OnPauseMenu;
         }
 
         public void RemoveCallbacks(IMainActions instance)
@@ -163,5 +192,6 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
     public interface IMainActions
     {
         void OnHaungsMode(InputAction.CallbackContext context);
+        void OnPauseMenu(InputAction.CallbackContext context);
     }
 }

@@ -18,7 +18,7 @@ public class Car : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform.parent.name == ("check" + _checkpoint))
+        if (other.transform.parent.CompareTag("checkpoint") && other.transform.parent.name == ("check" + _checkpoint))
         {
             Debug.Log("Hit checkpoint " + _checkpoint);
             _checkpoint++;
