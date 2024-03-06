@@ -18,7 +18,7 @@ public class Car : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.transform.parent.CompareTag("checkpoint") && other.transform.parent.name == ("check" + _checkpoint))
+        if (other.transform.parent.name == ("check" + _checkpoint))
         {
             Debug.Log("Hit checkpoint " + _checkpoint);
             _checkpoint++;
@@ -29,7 +29,7 @@ public class Car : MonoBehaviour
             // play particles SparksRight and SparksLeft which are children of parent object
             other.transform.parent.Find("SparksRight").GetComponent<ParticleSystem>().Play();
             other.transform.parent.Find("SparksLeft").GetComponent<ParticleSystem>().Play();
-            
+
         }
 
         if (other.gameObject.name == "finish" && _checkpoint == _totalCheckpoints - 1)

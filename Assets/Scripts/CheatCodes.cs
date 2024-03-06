@@ -37,9 +37,36 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Pause Menu"",
+                    ""name"": ""Pause"",
                     ""type"": ""Button"",
-                    ""id"": ""56a8d055-bc0d-49ac-98c7-8b40a6f6b919"",
+                    ""id"": ""fded94e0-f86f-4bcc-9863-b516bc658fcf"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Continue"",
+                    ""type"": ""Button"",
+                    ""id"": ""019a8d43-86e1-4602-a692-678a8f19e912"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Restart"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7b3ef5f-c857-46f1-a6a2-5601d678240b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""62524662-7673-49c2-ae87-a40939308beb"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -60,12 +87,45 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0f88f0f1-2994-4d69-9475-09fd8098d9b4"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""id"": ""2132ada0-1197-4639-b189-66cad5db7811"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Pause Menu"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7da220ac-7971-438a-8c44-0f0bfd4ccecc"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d3ef4a9-92f7-4a4c-bdd1-f8eeb3061b10"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Restart"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3217488f-b75b-4958-9598-28eeaf2f85a9"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -77,7 +137,10 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
         // Main
         m_Main = asset.FindActionMap("Main", throwIfNotFound: true);
         m_Main_HaungsMode = m_Main.FindAction("Haungs Mode", throwIfNotFound: true);
-        m_Main_PauseMenu = m_Main.FindAction("Pause Menu", throwIfNotFound: true);
+        m_Main_Pause = m_Main.FindAction("Pause", throwIfNotFound: true);
+        m_Main_Continue = m_Main.FindAction("Continue", throwIfNotFound: true);
+        m_Main_Restart = m_Main.FindAction("Restart", throwIfNotFound: true);
+        m_Main_Quit = m_Main.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -140,13 +203,19 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Main;
     private List<IMainActions> m_MainActionsCallbackInterfaces = new List<IMainActions>();
     private readonly InputAction m_Main_HaungsMode;
-    private readonly InputAction m_Main_PauseMenu;
+    private readonly InputAction m_Main_Pause;
+    private readonly InputAction m_Main_Continue;
+    private readonly InputAction m_Main_Restart;
+    private readonly InputAction m_Main_Quit;
     public struct MainActions
     {
         private @CheatCodes m_Wrapper;
         public MainActions(@CheatCodes wrapper) { m_Wrapper = wrapper; }
         public InputAction @HaungsMode => m_Wrapper.m_Main_HaungsMode;
-        public InputAction @PauseMenu => m_Wrapper.m_Main_PauseMenu;
+        public InputAction @Pause => m_Wrapper.m_Main_Pause;
+        public InputAction @Continue => m_Wrapper.m_Main_Continue;
+        public InputAction @Restart => m_Wrapper.m_Main_Restart;
+        public InputAction @Quit => m_Wrapper.m_Main_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -159,9 +228,18 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
             @HaungsMode.started += instance.OnHaungsMode;
             @HaungsMode.performed += instance.OnHaungsMode;
             @HaungsMode.canceled += instance.OnHaungsMode;
-            @PauseMenu.started += instance.OnPauseMenu;
-            @PauseMenu.performed += instance.OnPauseMenu;
-            @PauseMenu.canceled += instance.OnPauseMenu;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
+            @Continue.started += instance.OnContinue;
+            @Continue.performed += instance.OnContinue;
+            @Continue.canceled += instance.OnContinue;
+            @Restart.started += instance.OnRestart;
+            @Restart.performed += instance.OnRestart;
+            @Restart.canceled += instance.OnRestart;
+            @Quit.started += instance.OnQuit;
+            @Quit.performed += instance.OnQuit;
+            @Quit.canceled += instance.OnQuit;
         }
 
         private void UnregisterCallbacks(IMainActions instance)
@@ -169,9 +247,18 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
             @HaungsMode.started -= instance.OnHaungsMode;
             @HaungsMode.performed -= instance.OnHaungsMode;
             @HaungsMode.canceled -= instance.OnHaungsMode;
-            @PauseMenu.started -= instance.OnPauseMenu;
-            @PauseMenu.performed -= instance.OnPauseMenu;
-            @PauseMenu.canceled -= instance.OnPauseMenu;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
+            @Continue.started -= instance.OnContinue;
+            @Continue.performed -= instance.OnContinue;
+            @Continue.canceled -= instance.OnContinue;
+            @Restart.started -= instance.OnRestart;
+            @Restart.performed -= instance.OnRestart;
+            @Restart.canceled -= instance.OnRestart;
+            @Quit.started -= instance.OnQuit;
+            @Quit.performed -= instance.OnQuit;
+            @Quit.canceled -= instance.OnQuit;
         }
 
         public void RemoveCallbacks(IMainActions instance)
@@ -192,6 +279,9 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
     public interface IMainActions
     {
         void OnHaungsMode(InputAction.CallbackContext context);
-        void OnPauseMenu(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnContinue(InputAction.CallbackContext context);
+        void OnRestart(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }
