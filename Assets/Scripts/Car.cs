@@ -13,6 +13,7 @@ public class Car : MonoBehaviour
         foreach (GameObject go in GameObject.FindGameObjectsWithTag("checkpoint"))
         {
             _totalCheckpoints++;
+            Debug.Log("Total checkpoints: " + _totalCheckpoints);
         }
     }
 
@@ -35,10 +36,6 @@ public class Car : MonoBehaviour
         if (other.transform.parent.name == "finish" && _checkpoint == _totalCheckpoints)
         {
             Debug.Log("You win!");
-        }
-
-        if (other.gameObject.name == "Killzone") {
-            Debug.Log("You died :(");
         }
     }
 }
