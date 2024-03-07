@@ -13,6 +13,7 @@ TagManager:
   - checkpoint
   - Pause Screen
   - finish
+  - start
   layers:
   - Default
   - TransparentFX

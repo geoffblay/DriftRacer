@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
     public int checkpoints = 0;
     [SerializeField] int courseNumber;
     [SerializeField] int Numcheckpoints;
-    [SerializeField] int parMin;
-    [SerializeField] int parSec;
-    [SerializeField] int parMs;
+    [SerializeField] public int parMin;
+    [SerializeField] public int parSec;
+    [SerializeField] public int parMs;
     [SerializeField] GameObject PauseScreen;
     [SerializeField] PauseScreenManager pause_script;
 
@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     InputAction _restart;
 
     public float time_raw;
+    float cur_time = 0;
     int min;
     int sec;
     int ms;
@@ -103,6 +104,8 @@ public class GameManager : MonoBehaviour
         float pauseMenu = _pause.ReadValue<float>();
         if(PauseScreen.activeInHierarchy == true)
         {
+            inPlay = false;
+            cur_time = time_raw;
             float q = _quit.ReadValue<float>();
             float r = _restart.ReadValue<float>();
             float c = _cont.ReadValue<float>();
@@ -119,13 +122,15 @@ public class GameManager : MonoBehaviour
             if(c > 0)
             {
                 pause_script.Continue();
+                inPlay = true;
+                startTime = Time.time;
             }
         }
         else
         {
             if (inPlay)
             {
-                time_raw = Time.time - startTime;
+                time_raw = cur_time + Time.time - startTime;
                 sec = (int)time_raw % 60;
                 min = (int)time_raw / 60;
                 ms = (int)((time_raw - ((int)time_raw)) * 100);

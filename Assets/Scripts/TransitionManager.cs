@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using TreeEditor;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -28,7 +30,13 @@ public class TransitionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        int sec, min, ms;
+        parTime.text = "Drift Pioneer: " + string.Format("{0:00}", GameManager.Instance.parMin) + ":" + string.Format("{0:00}", GameManager.Instance.parSec) + ":" + string.Format("{0:00}", GameManager.Instance.parMs);
+        sec = (int)GameManager.Instance.time_raw % 60;
+        min = (int)GameManager.Instance.time_raw / 60;
+        ms = (int)((GameManager.Instance.time_raw - ((int)GameManager.Instance.time_raw)) * 100);
+        youTime.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + ":" + string.Format("{0:00}", ms);
+
     }
 
     // Update is called once per frame
