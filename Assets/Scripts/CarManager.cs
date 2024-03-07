@@ -9,6 +9,7 @@ public class CarManager : MonoBehaviour
 
 
     [SerializeField] GameObject transitionScreen;
+    [SerializeField] Material green;
 
     void Awake()
     {
@@ -56,6 +57,10 @@ public class CarManager : MonoBehaviour
                 other.transform.parent.Find("SparksRight").GetComponent<ParticleSystem>().Play();
                 other.transform.parent.Find("SparksLeft").GetComponent<ParticleSystem>().Play();
 
+                if(_checkpoint < _totalCheckpoints)
+                {
+
+                }
             }
 
             if (other.transform.parent.name == "finish" && _checkpoint == _totalCheckpoints)

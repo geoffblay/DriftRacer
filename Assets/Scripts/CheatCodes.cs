@@ -71,6 +71,15 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Controller"",
+                    ""type"": ""Button"",
+                    ""id"": ""9d3d9854-0052-4c01-9226-78d3e500765f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -128,6 +137,17 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
                     ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf8ac4e7-3501-492e-bba3-c7aaa97157c3"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Controller"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -141,6 +161,7 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
         m_Main_Continue = m_Main.FindAction("Continue", throwIfNotFound: true);
         m_Main_Restart = m_Main.FindAction("Restart", throwIfNotFound: true);
         m_Main_Quit = m_Main.FindAction("Quit", throwIfNotFound: true);
+        m_Main_Controller = m_Main.FindAction("Controller", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +228,7 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_Continue;
     private readonly InputAction m_Main_Restart;
     private readonly InputAction m_Main_Quit;
+    private readonly InputAction m_Main_Controller;
     public struct MainActions
     {
         private @CheatCodes m_Wrapper;
@@ -216,6 +238,7 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
         public InputAction @Continue => m_Wrapper.m_Main_Continue;
         public InputAction @Restart => m_Wrapper.m_Main_Restart;
         public InputAction @Quit => m_Wrapper.m_Main_Quit;
+        public InputAction @Controller => m_Wrapper.m_Main_Controller;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -240,6 +263,9 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
             @Quit.started += instance.OnQuit;
             @Quit.performed += instance.OnQuit;
             @Quit.canceled += instance.OnQuit;
+            @Controller.started += instance.OnController;
+            @Controller.performed += instance.OnController;
+            @Controller.canceled += instance.OnController;
         }
 
         private void UnregisterCallbacks(IMainActions instance)
@@ -259,6 +285,9 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
             @Quit.started -= instance.OnQuit;
             @Quit.performed -= instance.OnQuit;
             @Quit.canceled -= instance.OnQuit;
+            @Controller.started -= instance.OnController;
+            @Controller.performed -= instance.OnController;
+            @Controller.canceled -= instance.OnController;
         }
 
         public void RemoveCallbacks(IMainActions instance)
@@ -283,5 +312,6 @@ public partial class @CheatCodes: IInputActionCollection2, IDisposable
         void OnContinue(InputAction.CallbackContext context);
         void OnRestart(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
+        void OnController(InputAction.CallbackContext context);
     }
 }
