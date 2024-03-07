@@ -5,9 +5,10 @@ using UnityEngine;
 public class CarManager : MonoBehaviour
 {
     private int _checkpoint = 0;
-    private int _totalCheckpoints = 0;
+    int _totalCheckpoints = 0;
 
-    //[SerializeField] transition function button manager
+
+    [SerializeField] GameObject transitionScreen;
 
     void Awake()
     {
@@ -20,37 +21,53 @@ public class CarManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("finish") && _checkpoint == 0)
+        //Debug.Log("collision");
+        //Debug.Log(other.transform.name);
+        //Debug.Log(_totalCheckpoints);
+        if (other.transform.parent != null)
         {
-            // play a sound?
 
-            // hide start line
-            // start game manager timer
-            GameManager.Instance.inPlay = true;
-            GameManager.Instance.startTime = Time.time;
-            //this.gameObject.SetActive(false);
+            //Debug.Log(other.transform.parent.name);
+            //Debug.Log(_checkpoint);
+            if (other.transform.parent.CompareTag("finish") && _checkpoint == 0)
+            {
+                // play a sound?
+
+                // hide start line
+                // start game manager timer
+                GameManager.Instance.inPlay = true;
+                GameManager.Instance.startTime = Time.time;
+                //this.gameObject.SetActive(false);
+            }
+
+            if (other.transform.parent.name == ("check" + _checkpoint))
+            {
+                //Debug.Log("You win!");
+                //transitionScreen.SetActive(true);
+                //GameManager.Instance.inPlay = false;
+                Debug.Log("Hit checkpoint " + _checkpoint);
+                _checkpoint++;
+                GameManager.Instance.updateCheckpoint();
+
+                // hide checkpoint line
+                other.gameObject.SetActive(false);
+
+                // play particles SparksRight and SparksLeft which are children of parent object
+                other.transform.parent.Find("SparksRight").GetComponent<ParticleSystem>().Play();
+                other.transform.parent.Find("SparksLeft").GetComponent<ParticleSystem>().Play();
+
+            }
+
+            if (other.transform.parent.name == "finish" && _checkpoint == _totalCheckpoints)
+            {
+                Debug.Log("You win!");
+                transitionScreen.SetActive(true);
+                GameManager.Instance.inPlay = false;
+
+            }
         }
 
 
-        if (other.gameObject.transform.name == ("check" + _checkpoint))
-        {
-            Debug.Log("Hit checkpoint " + _checkpoint);
-            _checkpoint++;
 
-            // hide checkpoint line
-            other.gameObject.SetActive(false);
-
-            // play particles SparksRight and SparksLeft which are children of parent object
-            other.gameObject.transform.Find("SparksRight").GetComponent<ParticleSystem>().Play();
-            other.gameObject.transform.Find("SparksLeft").GetComponent<ParticleSystem>().Play();
-
-        }
-
-        //if (other.gameObject.name == "finish" && _checkpoint == _totalCheckpoints - 1)
-        //{
-        //    Debug.Log("You win!");
-
-        // open transition screen
-        //}
     }
 }
