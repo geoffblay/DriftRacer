@@ -357,7 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Par: 00:00:00'
+  m_text: 'Drift Pioneer: 00:00:00'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d2db0122da99934598010ada437fd81, type: 2}
   m_sharedMaterial: {fileID: 6050224243684915619, guid: 3d2db0122da99934598010ada437fd81, type: 2}
@@ -384,8 +384,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -451,7 +451,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 440, y: 25}
+  m_SizeDelta: {x: 807.3, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &83777373
 PrefabInstance:
@@ -1490,7 +1490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -270.24}
+  m_AnchoredPosition: {x: 0, y: -157.2}
   m_SizeDelta: {x: 230.9, y: 54.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &351077595
@@ -1537,8 +1537,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1456124932}
-        m_TargetAssemblyTypeName: PauseScreenManager, Assembly-CSharp
+      - m_Target: {fileID: 1456124937}
+        m_TargetAssemblyTypeName: TransitionManager, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -2048,7 +2048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -365.4}
+  m_AnchoredPosition: {x: 0, y: -229.6}
   m_SizeDelta: {x: 356.4, y: 54.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &532178718
@@ -2095,8 +2095,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1456124932}
-        m_TargetAssemblyTypeName: PauseScreenManager, Assembly-CSharp
+      - m_Target: {fileID: 1456124937}
+        m_TargetAssemblyTypeName: TransitionManager, Assembly-CSharp
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -2369,7 +2369,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time: 00:00:00'
+  m_text: 'You: 00:00:00'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d2db0122da99934598010ada437fd81, type: 2}
   m_sharedMaterial: {fileID: 6050224243684915619, guid: 3d2db0122da99934598010ada437fd81, type: 2}
@@ -2396,8 +2396,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 54
-  m_fontSizeBase: 54
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2500,8 +2500,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 49.03}
-  m_SizeDelta: {x: 680, y: 56.700012}
+  m_AnchoredPosition: {x: 0, y: -3}
+  m_SizeDelta: {x: 604.3, y: 56.700012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &666477159
 MonoBehaviour:
@@ -3521,11 +3521,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798905788360546241, guid: 4e4029de3efa24818af2cea788e4013c, type: 3}
       propertyPath: m_Convex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7798905788360546241, guid: 4e4029de3efa24818af2cea788e4013c, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7914974576985777965, guid: 4e4029de3efa24818af2cea788e4013c, type: 3}
       propertyPath: m_Name
@@ -3533,7 +3533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7914974576985777965, guid: 4e4029de3efa24818af2cea788e4013c, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3925,7 +3925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fefceefe666bb4682b272ec8c5bdd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &971607933
+--- !u!114 &971607935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3934,9 +3934,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 971607929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cef10e13da3c4af498f51da32fac0fc7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f75fb6ec1fc44edba99223dfc3664e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionScreen: {fileID: 0}
 --- !u!1 &982741860
 GameObject:
   m_ObjectHideFlags: 0
@@ -6219,7 +6220,8 @@ GameObject:
   - component: {fileID: 1456124935}
   - component: {fileID: 1456124934}
   - component: {fileID: 1456124933}
-  - component: {fileID: 1456124932}
+  - component: {fileID: 1456124937}
+  - component: {fileID: 1456124938}
   m_Layer: 5
   m_Name: Transition Screen
   m_TagString: Pause Screen
@@ -6227,18 +6229,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1456124932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1456124931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96377a09da4eb3841beab2194337c768, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1456124933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6320,8 +6310,8 @@ RectTransform:
   - {fileID: 351077594}
   - {fileID: 1668749438}
   - {fileID: 2013775422}
-  - {fileID: 1499068803}
   - {fileID: 666477158}
+  - {fileID: 1499068803}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6329,6 +6319,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1456124937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456124931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c30bbca08d90d348a7c7afedd60a9e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  courseNumber: 1
+  parTime: {fileID: 63654810}
+  youTime: {fileID: 659568828}
+--- !u!114 &1456124938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1456124931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 6c9e5d6c3336385458dcb75ec0b9032e, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Main
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1456305610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6453,7 +6488,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 642287924342879162, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 971607933}
+      addedObject: {fileID: 971607935}
     - targetCorrespondingSourceObject: {fileID: 934883528070179459, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 547250053}
@@ -6555,7 +6590,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -471.11}
+  m_AnchoredPosition: {x: 0, y: -303}
   m_SizeDelta: {x: 380.8, y: 54.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1495007374
@@ -6602,8 +6637,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1456124932}
-        m_TargetAssemblyTypeName: PauseScreenManager, Assembly-CSharp
+      - m_Target: {fileID: 1456124937}
+        m_TargetAssemblyTypeName: TransitionManager, Assembly-CSharp
         m_MethodName: Continue
         m_Mode: 1
         m_Arguments:
@@ -6744,8 +6779,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 120.31}
-  m_SizeDelta: {x: 680, y: 57.100006}
+  m_AnchoredPosition: {x: 0, y: 97.9}
+  m_SizeDelta: {x: 806.9, y: 57.100006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1499068804
 MonoBehaviour:
@@ -9061,7 +9096,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -218.06, y: 0}
+  m_AnchoredPosition: {x: -231.26, y: 0}
   m_SizeDelta: {x: 440.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2103116845
@@ -9118,7 +9153,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -9342,11 +9377,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 557167098644381862, guid: e3d3e7062fa30d04795e6a12434fd1c7, type: 3}
       propertyPath: m_Convex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 557167098644381862, guid: e3d3e7062fa30d04795e6a12434fd1c7, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5436471251941906797, guid: e3d3e7062fa30d04795e6a12434fd1c7, type: 3}
       propertyPath: m_LocalPosition.x

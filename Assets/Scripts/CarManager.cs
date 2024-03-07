@@ -7,6 +7,8 @@ public class CarManager : MonoBehaviour
     private int _checkpoint = 0;
     private int _totalCheckpoints = 0;
 
+    //[SerializeField] transition function button manager
+
     void Awake()
     {
         // count the number of checkpoints
@@ -30,19 +32,19 @@ public class CarManager : MonoBehaviour
         }
 
 
-        //if (other.transform.parent.name == ("check" + _checkpoint))
-        //{
-        //    Debug.Log("Hit checkpoint " + _checkpoint);
-        //    _checkpoint++;
+        if (other.gameObject.transform.name == ("check" + _checkpoint))
+        {
+            Debug.Log("Hit checkpoint " + _checkpoint);
+            _checkpoint++;
 
-        //    // hide checkpoint line
-        //    other.gameObject.SetActive(false);
+            // hide checkpoint line
+            other.gameObject.SetActive(false);
 
-        //    // play particles SparksRight and SparksLeft which are children of parent object
-        //    other.transform.parent.Find("SparksRight").GetComponent<ParticleSystem>().Play();
-        //    other.transform.parent.Find("SparksLeft").GetComponent<ParticleSystem>().Play();
+            // play particles SparksRight and SparksLeft which are children of parent object
+            other.gameObject.transform.Find("SparksRight").GetComponent<ParticleSystem>().Play();
+            other.gameObject.transform.Find("SparksLeft").GetComponent<ParticleSystem>().Play();
 
-        //}
+        }
 
         //if (other.gameObject.name == "finish" && _checkpoint == _totalCheckpoints - 1)
         //{

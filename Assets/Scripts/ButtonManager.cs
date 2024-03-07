@@ -32,22 +32,5 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("Start Menu");
     }
 
-    public void Transition1()
-    {
-        SceneManager.LoadScene("Course2");
-    }
-    public void Transition2()
-    {
-        SceneManager.LoadScene("Course3");
-    }
 
-    public void Transition3()
-    {
-        SceneManager.LoadScene("Course4");
-    }
-
-    public void Transition4()
-    {
-        SceneManager.LoadScene("Finish Menu");
-    }
 }
