@@ -2019,7 +2019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionScreen: {fileID: 1456124931}
-  checkpoint_green_material: {fileID: 0}
+  checkpoint_green_material: {fileID: 2100000, guid: bd80a3ee728d8439c8ee08ed634d50ad, type: 2}
 --- !u!114 &995184981 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3378155827142571810, guid: d537eed76f05a2f4cbab883d17101626, type: 3}
@@ -2756,10 +2756,6 @@ MonoBehaviour:
   parMs: 2
   PauseScreen: {fileID: 300290284}
   pause_script: {fileID: 300290290}
-  screen_3: {fileID: 570282695}
-  screen_2: {fileID: 99304626}
-  screen_1: {fileID: 2074378289}
-  screen_go: {fileID: 1900265802}
   time_raw: 0
 --- !u!4 &1274172031
 Transform:
@@ -5396,10 +5392,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Transition Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 4663718965188456164, guid: d537eed76f05a2f4cbab883d17101626, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6694845396710451760, guid: d537eed76f05a2f4cbab883d17101626, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5500,10 +5492,6 @@ PrefabInstance:
     - target: {fileID: 5015555280410539952, guid: 01da094b60cdf704c839c39bb1d95d2b, type: 3}
       propertyPath: m_Name
       value: Pause Screen
-      objectReference: {fileID: 0}
-    - target: {fileID: 5015555280410539952, guid: 01da094b60cdf704c839c39bb1d95d2b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7640029937682618209, guid: 01da094b60cdf704c839c39bb1d95d2b, type: 3}
       propertyPath: courseText
