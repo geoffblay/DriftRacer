@@ -25,10 +25,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject PauseScreen;
     [SerializeField] PauseScreenManager pause_script;
 
-    [SerializeField] GameObject screen_3;
-    [SerializeField] GameObject screen_2;
-    [SerializeField] GameObject screen_1;
-    [SerializeField] GameObject screen_go;
+    // [SerializeField] GameObject screen_3;
+    // [SerializeField] GameObject screen_2;
+    // [SerializeField] GameObject screen_1;
+    // [SerializeField] GameObject screen_go;
 
     InputAction _pause;
     InputAction _cont;
