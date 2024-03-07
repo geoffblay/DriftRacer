@@ -9,7 +9,7 @@ public class CarManager : MonoBehaviour
 
 
     [SerializeField] GameObject transitionScreen;
-    [SerializeField] Material green;
+    [SerializeField] Material checkpoint_green_material;
 
     void Awake()
     {
@@ -59,7 +59,7 @@ public class CarManager : MonoBehaviour
 
                 if(_checkpoint < _totalCheckpoints)
                 {
-                    GameObject.Find("check" + _checkpoint).transform.GetChild(0).GetComponent<Renderer>().material = green;
+                    GameObject.Find("check" + _checkpoint).transform.GetChild(0).GetComponent<Renderer>().material = checkpoint_green_material;
                 }
             }
 

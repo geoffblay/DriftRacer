@@ -1148,6 +1148,7 @@ MonoBehaviour:
   courseNumber: 1
   parTime: {fileID: 7372024371190019915}
   youTime: {fileID: 7655567853235391814}
+  courseText: {fileID: 3378155827142571810}
 --- !u!114 &2554076764184261880
 MonoBehaviour:
   m_ObjectHideFlags: 0
