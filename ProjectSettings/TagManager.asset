@@ -11,6 +11,9 @@ TagManager:
   - track
   - ground
   - checkpoint
+  - Pause Screen
+  - finish
+  - start
   layers:
   - Default
   - TransparentFX
