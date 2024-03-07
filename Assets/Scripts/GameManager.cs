@@ -16,19 +16,19 @@ public class GameManager : MonoBehaviour
 
     public bool inPlay = false;
     public float startTime;
-    public int checkpoints = 0;
-    [SerializeField] int courseNumber;
-    [SerializeField] int Numcheckpoints;
+    public int current_checkpoint = 0;
+    [SerializeField] public int courseNumber;
+    [SerializeField] int totalCheckpoints;
     [SerializeField] public int parMin;
     [SerializeField] public int parSec;
     [SerializeField] public int parMs;
     [SerializeField] GameObject PauseScreen;
     [SerializeField] PauseScreenManager pause_script;
 
-    [SerializeField] GameObject screen_3;
-    [SerializeField] GameObject screen_2;
-    [SerializeField] GameObject screen_1;
-    [SerializeField] GameObject screen_go;
+    //[SerializeField] GameObject screen_3;
+    //[SerializeField] GameObject screen_2;
+    //[SerializeField] GameObject screen_1;
+    //[SerializeField] GameObject screen_go;
 
     InputAction _pause;
     InputAction _cont;
@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
 
         parText.text = "Drift Pioneer: " + string.Format("{0:00}", parMin) + ":" + string.Format("{0:00}", parSec) + ":" + string.Format("{0:00}", parMs);
         courseText.text = "Course " + courseNumber;
-        checkpointText.text = "Checkpoints: " + checkpoints + "/" + Numcheckpoints;
+        checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
 
  
     }
@@ -109,6 +109,7 @@ public class GameManager : MonoBehaviour
             float q = _quit.ReadValue<float>();
             float r = _restart.ReadValue<float>();
             float c = _cont.ReadValue<float>();
+            Time.timeScale = 0;
             if(q > 0)
             {
                 pause_script.Quit();
@@ -122,8 +123,6 @@ public class GameManager : MonoBehaviour
             if(c > 0)
             {
                 pause_script.Continue();
-                inPlay = true;
-                startTime = Time.time;
             }
         }
         else
@@ -146,7 +145,7 @@ public class GameManager : MonoBehaviour
 
     public void updateCheckpoint()
     {
-        checkpoints++;
-        checkpointText.text = "Checkpoints: " + checkpoints + "/" + Numcheckpoints;
+        current_checkpoint++;
+        checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
     }
 }

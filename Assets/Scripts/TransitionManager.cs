@@ -12,6 +12,7 @@ public class TransitionManager : MonoBehaviour
     [SerializeField] int courseNumber;
     [SerializeField] TextMeshProUGUI parTime;
     [SerializeField] TextMeshProUGUI youTime;
+    [SerializeField] TextMeshProUGUI courseText;
 
     private PlayerInput _playerInput;
     InputAction _cont;
@@ -36,7 +37,7 @@ public class TransitionManager : MonoBehaviour
         min = (int)GameManager.Instance.time_raw / 60;
         ms = (int)((GameManager.Instance.time_raw - ((int)GameManager.Instance.time_raw)) * 100);
         youTime.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + ":" + string.Format("{0:00}", ms);
-
+        courseText.text = "Course " + GameManager.Instance.courseNumber;
     }
 
     // Update is called once per frame
