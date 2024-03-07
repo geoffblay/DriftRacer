@@ -2534,7 +2534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transitionScreen: {fileID: 1456124931}
-  green: {fileID: 0}
+  green: {fileID: 2100000, guid: bd80a3ee728d8439c8ee08ed634d50ad, type: 2}
 --- !u!1001 &1002354103
 PrefabInstance:
   m_ObjectHideFlags: 0

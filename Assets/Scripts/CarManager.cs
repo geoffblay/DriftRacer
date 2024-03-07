@@ -59,7 +59,7 @@ public class CarManager : MonoBehaviour
 
                 if(_checkpoint < _totalCheckpoints)
                 {
-
+                    GameObject.Find("check" + _checkpoint).transform.GetChild(0).GetComponent<Renderer>().material = green;
                 }
             }
 
