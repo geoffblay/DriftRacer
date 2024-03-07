@@ -5,7 +5,7 @@ using UnityEngine;
 public class CarManager : MonoBehaviour
 {
     private int _checkpoint = 0;
-    int _totalCheckpoints = 0;
+    private int _totalCheckpoints = 0;
 
 
     [SerializeField] GameObject transitionScreen;
@@ -23,7 +23,7 @@ public class CarManager : MonoBehaviour
     {
         //Debug.Log("collision");
         //Debug.Log(other.transform.name);
-        //Debug.Log(_totalCheckpoints);
+        Debug.Log(_totalCheckpoints);
         if (other.transform.parent != null)
         {
 

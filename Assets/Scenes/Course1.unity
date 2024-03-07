@@ -4822,6 +4822,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: check2
       objectReference: {fileID: 0}
+    - target: {fileID: 5763711527207529862, guid: 84b6e3d6f140046319e71a19e4a7d308, type: 3}
+      propertyPath: m_TagString
+      value: checkpoint
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
