@@ -10,8 +10,10 @@ TagManager:
   - track_plain_curve
   - track
   - ground
-  - checkpoint0
-  - check1
+  - checkpoint
+  - Pause Screen
+  - finish
+  - start
   layers:
   - Default
   - TransparentFX
