@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour
 {
-    [SerializeField] int courseNumber;
     [SerializeField] TextMeshProUGUI parTime;
     [SerializeField] TextMeshProUGUI youTime;
     [SerializeField] TextMeshProUGUI courseText;
@@ -68,7 +67,8 @@ public class TransitionManager : MonoBehaviour
     {
         //this.gameObject.SetActive(false)
         //SceneManager.LoadScene(nextScene);
-        switch(courseNumber)
+        Time.timeScale = 1;
+        switch(GameManager.Instance.courseNumber)
         {
             case 1:
                 Transition1();
@@ -90,6 +90,7 @@ public class TransitionManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void Quit()
@@ -103,8 +104,8 @@ public class TransitionManager : MonoBehaviour
     }
     public void Transition2()
     {
-        //SceneManager.LoadScene("Course3");
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Course3");
+        //SceneManager.LoadScene("SampleScene");
     }
 
     public void Transition3()

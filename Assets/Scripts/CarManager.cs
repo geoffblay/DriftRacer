@@ -68,6 +68,7 @@ public class CarManager : MonoBehaviour
                 Debug.Log("You win!");
                 transitionScreen.SetActive(true);
                 GameManager.Instance.inPlay = false;
+                Time.timeScale = 0;
 
             }
         }

@@ -61,7 +61,8 @@ public class GameManager : MonoBehaviour
         courseText.text = "Course " + courseNumber;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
 
- 
+        float par = (parMin * 60) + parSec + (parMs / 100);
+        MainManager.Instance.SetPioneerTime(courseNumber, par);
     }
 
     // Start is called before the first frame update
@@ -109,7 +110,7 @@ public class GameManager : MonoBehaviour
             float q = _quit.ReadValue<float>();
             float r = _restart.ReadValue<float>();
             float c = _cont.ReadValue<float>();
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             if(q > 0)
             {
                 pause_script.Quit();
@@ -136,7 +137,7 @@ public class GameManager : MonoBehaviour
                 timeText.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + ":" + string.Format("{0:00}", ms);
             }
 
-            if(pauseMenu > 0.5)
+            if(pauseMenu > 0)
             {
                 PauseScreen.SetActive(true);
             }

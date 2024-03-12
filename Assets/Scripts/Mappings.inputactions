@@ -1,5 +1,5 @@
 {
-    "name": "CheatCodes",
+    "name": "Mappings",
     "maps": [
         {
             "name": "Main",
@@ -54,6 +54,15 @@
                     "name": "Controller",
                     "type": "Button",
                     "id": "9d3d9854-0052-4c01-9226-78d3e500765f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Tutorial",
+                    "type": "Button",
+                    "id": "6232ee48-3e87-406f-b6d1-09a0f7e5e825",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -124,6 +133,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Controller",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "13f4d340-f676-428a-be5f-3a4bec7bd4de",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Tutorial",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
