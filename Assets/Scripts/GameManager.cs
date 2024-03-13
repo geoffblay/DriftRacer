@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public bool inPlay = false;
+    public bool haungsMode = false;
     public float startTime;
     public int current_checkpoint = 0;
     [SerializeField] public int courseNumber;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     InputAction _cont;
     InputAction _quit;
     InputAction _restart;
+    InputAction _haungsMode;
 
     public float time_raw;
     float cur_time = 0;
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
         _cont = _playerInput.actions["Continue"];
         _restart = _playerInput.actions["Restart"];
         _quit = _playerInput.actions["Quit"];
+        _haungsMode = _playerInput.actions["Haungs Mode"];
 
         parText.text = "Drift Pioneer: " + string.Format("{0:00}", parMin) + ":" + string.Format("{0:00}", parSec) + ":" + string.Format("{0:00}", parMs);
         courseText.text = "Course " + courseNumber;
@@ -97,8 +100,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+        float h = _haungsMode.ReadValue<float>();
+        if(h > 0)
+        {
+            haungsMode = true;
+        }
 
 
 
@@ -148,5 +154,15 @@ public class GameManager : MonoBehaviour
     {
         current_checkpoint++;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
+    }
+
+    public void HaungsMode()
+    {
+        current_checkpoint = totalCheckpoints;
+        checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("checkpoint"))
+        {
+            go.SetActive(false);
+        }
     }
 }
