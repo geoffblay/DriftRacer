@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         _quit = _playerInput.actions["Quit"];
         _haungsMode = _playerInput.actions["Haungs Mode"];
 
-        parText.text = "Drift Pioneer: " + string.Format("{0:00}", parMin) + ":" + string.Format("{0:00}", parSec) + ":" + string.Format("{0:00}", parMs);
+        parText.text = "Drift Pioneer: " + string.Format("{0:00}", parMin) + ":" + string.Format("{0:00}", parSec) + "." + string.Format("{0:000}", parMs);
         courseText.text = "Course " + courseNumber;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
 
