@@ -62,8 +62,6 @@ public class GameManager : MonoBehaviour
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
         timeText.text = "You: " + string.Format("{0:00}", 0) + ":" + string.Format("{0:00}", 0) + "." + string.Format("{0:000}", 0);
 
-        float par = (parMin * 60) + parSec + ((float)parMs / 1000.0f);
-        MainManager.Instance.SetPioneerTime(courseNumber, par);
     }
 
     // Start is called before the first frame update
@@ -87,6 +85,9 @@ public class GameManager : MonoBehaviour
         //screen_go.SetActive(false);
 
         // enable user input
+
+        float par = (parMin * 60) + parSec + ((float)parMs / 1000.0f);
+        MainManager.Instance.SetPioneerTime(courseNumber, par);
     }
 
     IEnumerator waiter()

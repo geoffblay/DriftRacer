@@ -1374,6 +1374,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981883692}
   m_CullTransparentMesh: 1
+--- !u!1 &983731854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 983731856}
+  - component: {fileID: 983731855}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &983731855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983731854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67eb36c60325556449916a7459e8e074, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pioneerT1: 0
+  pioneerT2: 0
+  pioneerT3: 0
+  pioneerT4: 0
+  playerT1: 0
+  playerT2: 0
+  playerT3: 0
+  playerT4: 0
+--- !u!4 &983731856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983731854}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 387.0645, y: 17.967665, z: -43.63012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109084290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2234,14 +2286,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pioneerTimes: {fileID: 641273989}
   yourTimes: {fileID: 81538217}
-  drift1: 0
-  drift2: 0
-  drift3: 0
-  drift4: 0
-  you1: 0
-  you2: 0
-  you3: 0
-  you4: 0
 --- !u!114 &2035661386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2280,3 +2324,4 @@ SceneRoots:
   - {fileID: 813513329}
   - {fileID: 2035661383}
   - {fileID: 1346150200}
+  - {fileID: 983731856}

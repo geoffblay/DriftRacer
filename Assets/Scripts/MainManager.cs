@@ -33,16 +33,16 @@ public class MainManager : MonoBehaviour
         switch(course)
         {
             case 1:
-                MainManager.Instance.pioneerT1 = time;
+                pioneerT1 = time;
                 break;
             case 2:
-                MainManager.Instance.pioneerT2 = time;
+                pioneerT2 = time;
                 break;
             case 3:
-                MainManager.Instance.pioneerT3 = time;
+                pioneerT3 = time;
                 break;
             case 4:
-                MainManager.Instance.pioneerT4 = time;
+                pioneerT4 = time;
                 break;
 
         }
