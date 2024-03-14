@@ -515,7 +515,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 87.5}
-  m_SizeDelta: {x: 337.66, y: 54.299988}
+  m_SizeDelta: {x: 462.9, y: 54.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &107363357
 MonoBehaviour:
@@ -782,7 +782,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 176.8}
-  m_SizeDelta: {x: 254.34, y: 54.299988}
+  m_SizeDelta: {x: 356.5, y: 54.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &696153858
 MonoBehaviour:
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Restart (R)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d2db0122da99934598010ada437fd81, type: 2}
   m_sharedMaterial: {fileID: 6050224243684915619, guid: 3d2db0122da99934598010ada437fd81, type: 2}
@@ -1927,7 +1927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start Menu
+  m_text: Start Menu (Q)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3d2db0122da99934598010ada437fd81, type: 2}
   m_sharedMaterial: {fileID: 6050224243684915619, guid: 3d2db0122da99934598010ada437fd81, type: 2}
@@ -2110,6 +2110,7 @@ GameObject:
   - component: {fileID: 2035661380}
   - component: {fileID: 2035661384}
   - component: {fileID: 2035661385}
+  - component: {fileID: 2035661386}
   m_Layer: 5
   m_Name: Finish Menu
   m_TagString: Untagged
@@ -2241,6 +2242,36 @@ MonoBehaviour:
   you2: 0
   you3: 0
   you4: 0
+--- !u!114 &2035661386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035661379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 6c9e5d6c3336385458dcb75ec0b9032e, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Main
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

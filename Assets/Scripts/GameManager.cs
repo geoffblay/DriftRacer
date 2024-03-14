@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     InputAction _quit;
     InputAction _restart;
 
-    public float time_raw;
+    public float time_raw = 0;
     float cur_time = 0;
     int min;
     int sec;
@@ -57,11 +57,13 @@ public class GameManager : MonoBehaviour
         _restart = _playerInput.actions["Restart"];
         _quit = _playerInput.actions["Quit"];
 
-        parText.text = "Drift Pioneer: " + string.Format("{0:00}", parMin) + ":" + string.Format("{0:00}", parSec) + ":" + string.Format("{0:00}", parMs);
+        parText.text = "Drift Pioneer: " + string.Format("{0:00}", parMin) + ":" + string.Format("{0:00}", parSec) + "." + string.Format("{0:000}", parMs);
         courseText.text = "Course " + courseNumber;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
+        timeText.text = "You: " + string.Format("{0:00}", 0) + ":" + string.Format("{0:00}", 0) + "." + string.Format("{0:000}", 0);
 
- 
+        float par = (parMin * 60) + parSec + ((float)parMs / 1000.0f);
+        MainManager.Instance.SetPioneerTime(courseNumber, par);
     }
 
     // Start is called before the first frame update
@@ -100,7 +102,6 @@ public class GameManager : MonoBehaviour
 
 
 
-
         float pauseMenu = _pause.ReadValue<float>();
         if(PauseScreen.activeInHierarchy == true)
         {
@@ -109,7 +110,7 @@ public class GameManager : MonoBehaviour
             float q = _quit.ReadValue<float>();
             float r = _restart.ReadValue<float>();
             float c = _cont.ReadValue<float>();
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             if(q > 0)
             {
                 pause_script.Quit();
@@ -132,11 +133,11 @@ public class GameManager : MonoBehaviour
                 time_raw = cur_time + Time.time - startTime;
                 sec = (int)time_raw % 60;
                 min = (int)time_raw / 60;
-                ms = (int)((time_raw - ((int)time_raw)) * 100);
-                timeText.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + ":" + string.Format("{0:00}", ms);
+                ms = (int)((time_raw - ((int)time_raw)) * 1000);
+                timeText.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + "." + string.Format("{0:000}", ms);
             }
 
-            if(pauseMenu > 0.5)
+            if(pauseMenu > 0)
             {
                 PauseScreen.SetActive(true);
             }
@@ -147,5 +148,21 @@ public class GameManager : MonoBehaviour
     {
         current_checkpoint++;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
+    }
+
+    public void updateCheckpoint(int checkpoint)
+    {
+        current_checkpoint = checkpoint;
+        checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
+    }
+
+    public void HaungsMode()
+    {
+        current_checkpoint = totalCheckpoints;
+        checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
+        foreach (GameObject go in GameObject.FindGameObjectsWithTag("checkpoint"))
+        {
+            go.SetActive(false);
+        }
     }
 }

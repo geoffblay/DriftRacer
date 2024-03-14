@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour
 {
-    [SerializeField] int courseNumber;
     [SerializeField] TextMeshProUGUI parTime;
     [SerializeField] TextMeshProUGUI youTime;
     [SerializeField] TextMeshProUGUI courseText;
@@ -32,11 +31,12 @@ public class TransitionManager : MonoBehaviour
     void Start()
     {
         int sec, min, ms;
-        parTime.text = "Drift Pioneer: " + string.Format("{0:00}", GameManager.Instance.parMin) + ":" + string.Format("{0:00}", GameManager.Instance.parSec) + ":" + string.Format("{0:00}", GameManager.Instance.parMs);
+        parTime.text = "Drift Pioneer: " + string.Format("{0:00}", GameManager.Instance.parMin) + ":" + string.Format("{0:00}", GameManager.Instance.parSec) + "." + string.Format("{0:000}", GameManager.Instance.parMs);
         sec = (int)GameManager.Instance.time_raw % 60;
         min = (int)GameManager.Instance.time_raw / 60;
-        ms = (int)((GameManager.Instance.time_raw - ((int)GameManager.Instance.time_raw)) * 100);
-        youTime.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + ":" + string.Format("{0:00}", ms);
+        ms = (int)((GameManager.Instance.time_raw - ((int)GameManager.Instance.time_raw)) * 1000);
+        youTime.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + ":" + string.Format("{0:000}", ms);
+        MainManager.Instance.SetPlayerTime(GameManager.Instance.courseNumber, GameManager.Instance.time_raw);
         courseText.text = "Course " + GameManager.Instance.courseNumber;
     }
 
@@ -68,7 +68,8 @@ public class TransitionManager : MonoBehaviour
     {
         //this.gameObject.SetActive(false)
         //SceneManager.LoadScene(nextScene);
-        switch(courseNumber)
+        Time.timeScale = 1;
+        switch(GameManager.Instance.courseNumber)
         {
             case 1:
                 Transition1();
@@ -90,6 +91,7 @@ public class TransitionManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 
     public void Quit()
@@ -103,8 +105,8 @@ public class TransitionManager : MonoBehaviour
     }
     public void Transition2()
     {
-        //SceneManager.LoadScene("Course3");
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Course3");
+        //SceneManager.LoadScene("SampleScene");
     }
 
     public void Transition3()
