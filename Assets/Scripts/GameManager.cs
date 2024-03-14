@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public bool inPlay = false;
-    public bool haungsMode = false;
     public float startTime;
     public int current_checkpoint = 0;
     [SerializeField] public int courseNumber;
@@ -35,9 +34,8 @@ public class GameManager : MonoBehaviour
     InputAction _cont;
     InputAction _quit;
     InputAction _restart;
-    InputAction _haungsMode;
 
-    public float time_raw;
+    public float time_raw = 0;
     float cur_time = 0;
     int min;
     int sec;
@@ -58,13 +56,13 @@ public class GameManager : MonoBehaviour
         _cont = _playerInput.actions["Continue"];
         _restart = _playerInput.actions["Restart"];
         _quit = _playerInput.actions["Quit"];
-        _haungsMode = _playerInput.actions["Haungs Mode"];
 
         parText.text = "Drift Pioneer: " + string.Format("{0:00}", parMin) + ":" + string.Format("{0:00}", parSec) + "." + string.Format("{0:000}", parMs);
         courseText.text = "Course " + courseNumber;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
+        timeText.text = "You: " + string.Format("{0:00}", 0) + ":" + string.Format("{0:00}", 0) + "." + string.Format("{0:000}", 0);
 
-        float par = (parMin * 60) + parSec + (parMs / 1000);
+        float par = (parMin * 60) + parSec + ((float)parMs / 1000.0f);
         MainManager.Instance.SetPioneerTime(courseNumber, par);
     }
 
@@ -100,11 +98,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float h = _haungsMode.ReadValue<float>();
-        if(h > 0)
-        {
-            haungsMode = true;
-        }
+
 
 
 
@@ -153,6 +147,12 @@ public class GameManager : MonoBehaviour
     public void updateCheckpoint()
     {
         current_checkpoint++;
+        checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
+    }
+
+    public void updateCheckpoint(int checkpoint)
+    {
+        current_checkpoint = checkpoint;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
     }
 
