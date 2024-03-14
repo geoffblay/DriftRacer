@@ -40,5 +40,6 @@ public class PauseScreenManager : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene("Start Menu");
+        Time.timeScale = 1;
     }
 }

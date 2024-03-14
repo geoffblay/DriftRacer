@@ -106,13 +106,13 @@ public class GameManager : MonoBehaviour
         float pauseMenu = _pause.ReadValue<float>();
         if(PauseScreen.activeInHierarchy == true)
         {
-            inPlay = false;
+            //inPlay = false;
             cur_time = time_raw;
             float q = _quit.ReadValue<float>();
             float r = _restart.ReadValue<float>();
             float c = _cont.ReadValue<float>();
-            //Time.timeScale = 0;
-            if(q > 0)
+            Time.timeScale = 0;
+            if (q > 0)
             {
                 pause_script.Quit();
             }
