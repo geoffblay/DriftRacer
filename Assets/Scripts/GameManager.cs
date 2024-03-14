@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         courseText.text = "Course " + courseNumber;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
 
-        float par = (parMin * 60) + parSec + (parMs / 100);
+        float par = (parMin * 60) + parSec + (parMs / 1000);
         MainManager.Instance.SetPioneerTime(courseNumber, par);
     }
 
@@ -139,8 +139,8 @@ public class GameManager : MonoBehaviour
                 time_raw = cur_time + Time.time - startTime;
                 sec = (int)time_raw % 60;
                 min = (int)time_raw / 60;
-                ms = (int)((time_raw - ((int)time_raw)) * 100);
-                timeText.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + ":" + string.Format("{0:00}", ms);
+                ms = (int)((time_raw - ((int)time_raw)) * 1000);
+                timeText.text = "You: " + string.Format("{0:00}", min) + ":" + string.Format("{0:00}", sec) + "." + string.Format("{0:000}", ms);
             }
 
             if(pauseMenu > 0)

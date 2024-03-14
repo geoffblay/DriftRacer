@@ -48,7 +48,7 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    public void SetPlayerTime(int course, int time)
+    public void SetPlayerTime(int course, float time)
     {
         switch (course)
         {
