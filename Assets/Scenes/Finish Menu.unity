@@ -1686,13 +1686,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67eb36c60325556449916a7459e8e074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pioneerT1: 82.3456
-  pioneerT2: 2
+  pioneerT1: 0
+  pioneerT2: 0
   pioneerT3: 0
   pioneerT4: 0
   playerT1: 0
-  playerT2: 5.555
-  playerT3: 3.324
+  playerT2: 0
+  playerT3: 0
   playerT4: 0
 --- !u!4 &983731856
 Transform:
