@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public float startTime;
     public int current_checkpoint = 0;
     [SerializeField] public int courseNumber;
-    [SerializeField] int totalCheckpoints;
+    [SerializeField] public int totalCheckpoints;
     [SerializeField] public int parMin;
     [SerializeField] public int parSec;
     [SerializeField] public int parMs;
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         courseText.text = "Course " + courseNumber;
         checkpointText.text = "Checkpoints: " + current_checkpoint + "/" + totalCheckpoints;
         timeText.text = "You: " + string.Format("{0:00}", 0) + ":" + string.Format("{0:00}", 0) + "." + string.Format("{0:000}", 0);
-
+        Time.timeScale = 1;
     }
 
     // Start is called before the first frame update

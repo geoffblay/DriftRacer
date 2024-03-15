@@ -25,9 +25,14 @@ public class CarManager : MonoBehaviour
             _totalCheckpoints++;
         }
 
-
         _playerInput = GetComponent<PlayerInput>();
         _haungsMode = _playerInput.actions["Haungs Mode"];
+    }
+
+    private void Start()
+    {
+
+        GameManager.Instance.totalCheckpoints = _totalCheckpoints;
     }
 
     void OnTriggerEnter(Collider other)
@@ -87,10 +92,11 @@ public class CarManager : MonoBehaviour
 
     }
 
-    private void Update()
+    void Update()
     {
         float h = _haungsMode.ReadValue<float>();
-        if (h > 0 && haungsMode == false)
+
+        if (haungsMode == false && h > 0)
         {
             Debug.Log(_checkpoint);
             haungsMode = true;
@@ -99,7 +105,7 @@ public class CarManager : MonoBehaviour
             GameManager.Instance.updateCheckpoint(_checkpoint);
             foreach (GameObject go in GameObject.FindGameObjectsWithTag("checkpoint"))
             {
-                go.SetActive(false);
+                go.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
     }

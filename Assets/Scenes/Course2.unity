@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.67936105, g: 0.73288757, b: 0.8046863, a: 1}
+  m_IndirectSpecularColor: {r: 0.679325, g: 0.7328694, b: 0.80467784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10163,8 +10163,8 @@ Transform:
   - {fileID: 935350157}
   - {fileID: 1440687739}
   - {fileID: 141216730}
-  - {fileID: 938948821}
   - {fileID: 1143769798}
+  - {fileID: 938948821}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709738677 stripped
@@ -17163,7 +17163,7 @@ MonoBehaviour:
   startTime: 0
   current_checkpoint: 0
   courseNumber: 2
-  totalCheckpoints: 10
+  totalCheckpoints: 11
   parMin: 1
   parSec: 10
   parMs: 0
@@ -22621,6 +22621,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1487421878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4623473870522345090, guid: 35b77a68f9519904e9237485dc65edc8, type: 3}
+  m_PrefabInstance: {fileID: 1487421873}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1489567609 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7cd1d2c7f903af547a1dc6525af1bde3, type: 3}
@@ -25272,6 +25283,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 642287924342879162, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1653918000}
+    - targetCorrespondingSourceObject: {fileID: 642287924342879162, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1653918002}
     - targetCorrespondingSourceObject: {fileID: 934883528070179459, guid: 79d0ca8b77e301442afdb49f102e8aed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1653918001}
@@ -25306,7 +25320,7 @@ MonoBehaviour:
   haungsMode: 0
   transitionScreen: {fileID: 816806615}
   checkpoint_green_material: {fileID: 2100000, guid: bd80a3ee728d8439c8ee08ed634d50ad, type: 2}
-  cheatText: {fileID: 0}
+  cheatText: {fileID: 1487421878}
 --- !u!65 &1653918001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25328,6 +25342,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.1879992, y: 1.273127, z: 5.4157486}
   m_Center: {x: 0, y: 0.83018893, z: -0.010903478}
+--- !u!114 &1653918002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653917997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 6c9e5d6c3336385458dcb75ec0b9032e, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Main
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &1656037204
 PrefabInstance:
   m_ObjectHideFlags: 0
