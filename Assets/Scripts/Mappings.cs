@@ -95,7 +95,7 @@ public partial class @Mappings: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""46d7d776-4dbf-4c4a-ad65-92a6884e7037"",
-                    ""path"": ""<Keyboard>/g"",
+                    ""path"": ""<Keyboard>/h"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

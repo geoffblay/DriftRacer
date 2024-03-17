@@ -22,7 +22,6 @@ public class ButtonManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -47,11 +46,13 @@ public class ButtonManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("Course1");
+        Time.timeScale = 1;
     }
 
     public void Tutorial()
     {
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
     }
 
     public void Quit()

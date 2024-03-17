@@ -53,16 +53,16 @@ public class MainManager : MonoBehaviour
         switch (course)
         {
             case 1:
-                MainManager.Instance.playerT1 = time;
+                playerT1 = time;
                 break;
             case 2:
-                MainManager.Instance.playerT2 = time;
+                playerT2 = time;
                 break;
             case 3:
-                MainManager.Instance.playerT3 = time;
+                playerT3 = time;
                 break;
             case 4:
-                MainManager.Instance.playerT4 = time;
+                playerT4 = time;
                 break;
 
         }
