@@ -368,7 +368,7 @@ public class PrometeoCarController : MonoBehaviour
         //Speed Boost Code
         if(Input.GetKey(KeyCode.E)) {
           Debug.Log("E-Pressed");
-          carRigidbody.AddForce(transform.forward*5000000*Time.fixedDeltaTime);
+          carRigidbody.AddForce(transform.forward*1000000*Time.fixedDeltaTime);
           // maxSpeed*=2;
           // accelerationMultiplier*=2;
           // Invoke("ResetSpeed", 3f);
