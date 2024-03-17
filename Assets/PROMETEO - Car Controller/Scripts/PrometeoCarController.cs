@@ -131,6 +131,9 @@ public class PrometeoCarController : MonoBehaviour
       [HideInInspector]
       public bool isTractionLocked; // Used to know whether the traction of the car is locked or not.
 
+      //The extra var for boosting
+      public float boostForce = 200000000f;
+
     //PRIVATE VARIABLES
 
       /*
@@ -361,6 +364,14 @@ public class PrometeoCarController : MonoBehaviour
         }
         if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && steeringAxis != 0f){
           ResetSteeringAngle();
+        }
+        //Speed Boost Code
+        if(Input.GetKey(KeyCode.E)) {
+          Debug.Log("E-Pressed");
+          carRigidbody.AddForce(transform.forward*5000000*Time.fixedDeltaTime);
+          // maxSpeed*=2;
+          // accelerationMultiplier*=2;
+          // Invoke("ResetSpeed", 3f);
         }
 
       }
