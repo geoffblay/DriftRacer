@@ -158,9 +158,18 @@ public class PrometeoCarController : MonoBehaviour
       WheelFrictionCurve RRwheelFriction;
       float RRWextremumSlip;
 
+      public List<Transform> wheelTransforms = new List<Transform>();
+      bool isOnTrack = true;
+
     // Start is called before the first frame update
     void Start()
     {
+      // get list of wheel transforms
+      wheelTransforms.Add(frontLeftMesh.transform);
+      wheelTransforms.Add(frontRightMesh.transform);
+      wheelTransforms.Add(rearLeftMesh.transform);
+      wheelTransforms.Add(rearRightMesh.transform);
+
       //In this part, we set the 'carRigidbody' value with the Rigidbody attached to this
       //gameObject. Also, we define the center of mass of the car with the Vector3 given
       //in the inspector.
@@ -266,10 +275,35 @@ public class PrometeoCarController : MonoBehaviour
     void Update()
     {
 
+
       //CAR DATA
 
       // We determine the speed of the car.
       carSpeed = (2 * Mathf.PI * frontLeftCollider.radius * frontLeftCollider.rpm * 60) / 1000;
+      // check if all wheels are on track
+      int wheelsOffTrack = 0;
+      foreach (Transform wheel in wheelTransforms)
+      {
+        if (isWheelOnTrack(wheel.position) == false)
+        {
+          wheelsOffTrack++;
+        }
+      }
+      if (wheelsOffTrack > 2)
+      {
+        isOnTrack = false;
+        maxSpeed /= 8;
+        Debug.Log("speed: " + carSpeed);
+      }
+      else
+      {
+        if (isOnTrack == false)
+        {
+          maxSpeed *= 8;
+        }
+        isOnTrack = true;
+        Debug.Log("speed: " + carSpeed);
+      }
       // Save the local velocity of the car in the x axis. Used to know if the car is drifting.
       localVelocityX = transform.InverseTransformDirection(carRigidbody.velocity).x;
       // Save the local velocity of the car in the z axis. Used to know if the car is going forward or backwards.
@@ -769,6 +803,20 @@ public class PrometeoCarController : MonoBehaviour
 
         driftingAxis = 0f;
       }
+    }
+
+    bool isWheelOnTrack(Vector3 wheelPosition)
+    {
+      RaycastHit hit;
+      if (Physics.Raycast(wheelPosition, Vector3.down, out hit, 10f))
+      {
+        if (hit.collider.CompareTag("track"))
+        {
+            return true; // Wheel is touching the track
+        }
+      }
+
+      return false;
     }
 
 }
