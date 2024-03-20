@@ -98,19 +98,19 @@ public class TransitionManager : MonoBehaviour
 
     public void Transition1()
     {
-        SceneManager.LoadScene("Course2");
-        //SceneManager.LoadScene("StoryScreen1");
+        //SceneManager.LoadScene("Course2");
+        SceneManager.LoadScene("StoryScreen1");
     }
     public void Transition2()
     {
-        SceneManager.LoadScene("Course3");
-        //SceneManager.LoadScene("StoryScreen2");
+        //SceneManager.LoadScene("Course3");
+        SceneManager.LoadScene("StoryScreen2");
     }
 
     public void Transition3()
     {
-        SceneManager.LoadScene("Course4");
-        //SceneManager.LoadScene("StoryScreen3");
+        //SceneManager.LoadScene("Course4");
+        SceneManager.LoadScene("StoryScreen3");
     }
 
     public void Transition4()
