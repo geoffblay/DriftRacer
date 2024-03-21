@@ -38,7 +38,7 @@ public class FinalScoreManager : MonoBehaviour
         float you2 = MainManager.Instance.playerT2;
         float you3 = MainManager.Instance.playerT3;
         float you4 = MainManager.Instance.playerT4;
-        int min, ms;
+        int min;
         float sec;
         float totalPioneer = drift1 + drift2 + drift3 + drift4;
         float totalYou = you1 + you2 + you3 + you4;
