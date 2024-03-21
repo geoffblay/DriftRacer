@@ -29,4 +29,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Course3.unity
     guid: 78a9afaf674088943bf85ff51df338ca
+  - enabled: 1
+    path: Assets/Scenes/StoryScreen3.unity
+    guid: d69127d42bb375c4798b4f60eebc93e8
+  - enabled: 1
+    path: Assets/Scenes/StoryScreen2.unity
+    guid: 03ad15185090df74fb0a5489b8ea9364
+  - enabled: 1
+    path: Assets/Scenes/StoryScreen4.unity
+    guid: 83c11e60c35582f488ef0668ba19f4dc
   m_configObjects: {}
