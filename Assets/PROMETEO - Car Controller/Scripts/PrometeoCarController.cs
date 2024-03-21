@@ -289,20 +289,24 @@ public class PrometeoCarController : MonoBehaviour
           wheelsOffTrack++;
         }
       }
-      if (wheelsOffTrack > 2)
+      if (wheelsOffTrack > 2 && isOnTrack == true)
       {
+        // Debug.Log("switch to off track");
         isOnTrack = false;
         maxSpeed /= 8;
-        Debug.Log("speed: " + carSpeed);
+        Debug.Log("maxSpeed: " + maxSpeed);
+        // Debug.Log("speed: " + carSpeed);
       }
       else
       {
         if (isOnTrack == false)
         {
+          // Debug.Log("switch to on track");
           maxSpeed *= 8;
+          Debug.Log("maxSpeed: " + maxSpeed);
         }
         isOnTrack = true;
-        Debug.Log("speed: " + carSpeed);
+        // Debug.Log("speed: " + carSpeed);
       }
       // Save the local velocity of the car in the x axis. Used to know if the car is drifting.
       localVelocityX = transform.InverseTransformDirection(carRigidbody.velocity).x;
@@ -810,7 +814,7 @@ public class PrometeoCarController : MonoBehaviour
       RaycastHit hit;
       if (Physics.Raycast(wheelPosition, Vector3.down, out hit, 10f))
       {
-        if (hit.collider.CompareTag("track"))
+        if (hit.transform.CompareTag("track"))
         {
             return true; // Wheel is touching the track
         }
